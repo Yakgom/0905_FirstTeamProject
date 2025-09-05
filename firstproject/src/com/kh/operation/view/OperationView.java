@@ -23,7 +23,12 @@ public class OperationView {
 		
 		switch(menuNo) {
 		case 1: break;
+<<<<<<< HEAD
 		case 2: new LibraryView().mainMenu(); break;
+=======
+		case 2: new LibraryView().mainMenu();
+		break;
+>>>>>>> be768b74706851d9701a03d8bd07fd5019d527f5
 		case 0: System.out.println("프로그램을 종료합니다.");return;
 		
 		default : System.out.println("잘못된 입력입니다.");

@@ -6,6 +6,7 @@ import com.kh.librarymember.controller.LibraryMemberController;
 
 public class LibraryView {
 
+<<<<<<< HEAD
 	private Scanner sc = new Scanner(System.in);
 	private LibraryMemberController lmc = new LibraryMemberController();
 	
@@ -83,5 +84,10 @@ public class LibraryView {
 	
 	
 	
+=======
+	public void mainMenu() {
+		
+	}
+>>>>>>> be768b74706851d9701a03d8bd07fd5019d527f5
 }
 
