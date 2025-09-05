@@ -10,13 +10,28 @@
 	<entry key="memberInsert">
 		INSERT
 		  INTO
-		       TB_LIBRARY_MEMBER
+		       TB_LIBRARY_MEMBER(
+		       					 MEMBER_NO
+		       				   , MEMBER_NAME
+		       				   , MEMBER_PHONE)
 		VALUES
 		       (
-		       MEMBER_NO
+		       SEQ_LIBRARY_MEMBER_NO.NEXTVAL
 		     , ?
 		     , ?
 		       )	  
+	</entry>
+	
+	<entry key="memberUpdate">
+		UPDATE
+		       TB_LIBRARY_MEMBER
+		   SET
+		       MEMBER_PHONE = (SELECT
+		                              MEMBER_PHONE
+		                         FROM
+		                              TB_LIBRARY_MEMBER
+		                        WHERE
+		                              MEMBER_PHONE = ?)
 	</entry>
 
    

@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 /bin/
 .metadata/
 *.class
+=======
+.metadata/
+*.class
+.classpath
+>>>>>>> 4d98a503de85756539a694a3a27a6fccd87a1d93

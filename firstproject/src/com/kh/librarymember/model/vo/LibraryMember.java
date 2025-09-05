@@ -13,6 +13,16 @@ public class LibraryMember {
 		super();
 	}
 
+	
+
+	public LibraryMember(String memberName, String memberPhone) {
+		super();
+		this.memberName = memberName;
+		this.memberPhone = memberPhone;
+	}
+
+
+
 
 	public LibraryMember(int memberNo, String memberName, String memberPhone) {
 		super();

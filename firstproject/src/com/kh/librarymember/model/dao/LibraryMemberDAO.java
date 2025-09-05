@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 import com.kh.common.JDBCTemplate;
+import com.kh.librarymember.model.dto.LibraryMemberDTO;
 import com.kh.librarymember.model.vo.LibraryMember;
 
 public class LibraryMemberDAO {
@@ -22,7 +23,6 @@ public class LibraryMemberDAO {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	System.out.println(prop + "test");
 	}
 	
 	
@@ -53,11 +53,40 @@ public class LibraryMemberDAO {
 			JDBCTemplate.close(pstmt);
 		}
 		
+		return result;
+	}
+
+	
+	public int memberUpdate(Connection conn, LibraryMemberDTO ldto) {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		try {
+			prop.loadFromXML(new FileInputStream("resources/libarymember-mapper.xml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		String sql = prop.getProperty("memberInsert");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, ldto.getNewPhone());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(pstmt);
+		}
 		
 		return result;
 		
+		
+		
 	}
-	
 	
 	
 	
