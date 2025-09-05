@@ -2,6 +2,7 @@ package com.kh.operation.view;
 
 import java.util.Scanner;
 
+import com.kh.book.view.BookView;
 import com.kh.librarymember.view.LibraryView;
 
 public class OperationView {
@@ -22,12 +23,11 @@ public class OperationView {
 		sc.nextLine();
 		
 		switch(menuNo) {
-		case 1: break;
+		case 1: new BookView().mainMenu(); break;
 		case 2: new LibraryView().mainMenu(); break;
 		case 0: System.out.println("프로그램을 종료합니다.");return;
 		
 		default : System.out.println("잘못된 입력입니다.");
-		
 		
 		
 		}

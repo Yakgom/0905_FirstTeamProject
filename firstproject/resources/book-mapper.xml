@@ -24,7 +24,7 @@
                    GENRE_NAME = ?)
          , 'N'
          , SYSDATE
-           );
+           )
 	</entry>
 	
 	<entry key="deleteBook">

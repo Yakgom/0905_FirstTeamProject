@@ -19,7 +19,7 @@ public class BookView {
 		
 		switch(menuNo) {
 		case 1 : bookView(); break;
-		case 2 : BookGenreView().mainMenu(); break;
+		case 2 : break;
 		case 9 : return;
 		default : System.out.println("잘못 입력하셨습니다. ");
 		}
@@ -32,7 +32,7 @@ public class BookView {
 		System.out.println("3. 도서 조회");
 		System.out.println("4. 도서명 변경");
 		System.out.println("9. 이전 메뉴로 돌아가기");
-		System.err.print("원하시는 메뉴를 입력해주세요 : ");
+		System.out.print("원하시는 메뉴를 입력해주세요 : ");
 		
 		int menuNo = sc.nextInt();
 		sc.nextLine();
