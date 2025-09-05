@@ -2,6 +2,8 @@ package com.kh.operation.view;
 
 import java.util.Scanner;
 
+import com.kh.librarymember.view.LibraryView;
+
 public class OperationView {
 
 	private Scanner sc = new Scanner(System.in);
@@ -21,7 +23,8 @@ public class OperationView {
 		
 		switch(menuNo) {
 		case 1: break;
-		case 2: break;
+		case 2: new LibraryView().mainMenu();
+		break;
 		case 0: System.out.println("프로그램을 종료합니다.");return;
 		
 		default : System.out.println("잘못된 입력입니다.");

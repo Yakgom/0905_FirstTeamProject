@@ -4,8 +4,59 @@
 <properties>
 
 	<comment>
-	Bookgenre SQL
+		Bookgenre SQL
 	</comment>
 
-   
+	<entry key="save">
+	INSERT
+	  INTO
+	       TB_BOOK_GENRE(
+	       GENRE_NO
+	     , GENRE_NAME
+	     , LOCATION_PLACE
+	       )
+	VALUES
+	       (
+		   SEQ_GENRE_NO.NEXTVAL
+	       , ?
+	       , ?
+	       )
+
+	</entry>
+
+	<entry key="findAll">
+	SELECT
+	       GENRE_NO
+	     , GENRE_NAME
+	     , LOCATION_PLACE
+	 FROM
+	       TB_BOOK_GENRE
+	ORDER
+	   BY
+	       GENRE_NO ASC
+
+	</entry>
+
+	<entry key="update">
+	UPDATE
+		   TB_BOOK_GENRE
+	   SET
+	       LOCATION_PLACE =?
+	 WHERE
+	       GENRE_NAME =?
+       
+
+	</entry>
+
+	<entry key="delete">
+	DELETE
+	  FROM
+	       TB_BOOK_GENRE
+	 WHERE
+	       GENRE_NAME = ?
+	   AND
+	       LOCATION_PLACE = ?
+       
+
+	</entry>
 </properties>
