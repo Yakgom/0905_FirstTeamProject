@@ -6,6 +6,18 @@
 	<comment>
 	libarymember-mapper
 	</comment>
+	
+	<entry key="memberInsert">
+		INSERT
+		  INTO
+		       TB_LIBRARY_MEMBER
+		VALUES
+		       (
+		       MEMBER_NO
+		     , ?
+		     , ?
+		       )	  
+	</entry>
 
    
 </properties>
