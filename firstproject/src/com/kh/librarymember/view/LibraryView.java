@@ -35,7 +35,7 @@ public class LibraryView {
 			
 			switch(menuNo) {
 			case 1 : memberInsert(); break;
-			case 2 : break;
+			case 2 : memberUpdate(); break;
 			case 3 : break;
 			case 4 : break;
 			case 0 : System.out.println("메인화면으로 이동합니다"); return;
@@ -48,14 +48,37 @@ public class LibraryView {
 		
 		System.out.println();
 		System.out.println("===== 📃📃 회원 가입 서비스 📃📃 =====");
-		System.out.println("등록하실 이름을 적어주세요 > ");
+		System.out.println("등록하실 이름을 입력해주세요 > ");
 		String memberName = sc.nextLine();
-		System.out.println("등록하실 전화번호를 적어주세요 > ");
+		System.out.println("등록하실 전화번호를 입력해주세요 > ");
 		String memberPhone = sc.nextLine();
+		
+		int result = lmc.memberInsert(memberName, memberPhone);
+		
+		if(result > 0) {
+			System.out.println("회원 가입에 성공했습니다.");
+		} else {
+			System.out.println("회원 가입에 실패했습니다.");
+		}
 		
 	}
 	
-	
+
+	private void memberUpdate() {
+		
+		System.out.println();
+		System.out.println("===== 📃📃 정보 변경 서비스 📃📃 =====");
+		System.out.println("등록하신 이름을 입력해주세요 > ");
+		String memberName = sc.nextLine();
+		System.out.println("등록하신 전화번호를 입력해주세요 > ");
+		String memberPhone = sc.nextLine();
+		System.out.println("변경하실 전화번호를 입력해주세요 > ");
+		String newPhone = sc.nextLine();
+		
+		int result = lmc.memberUpdate(memberName, memberPhone, newPhone);
+		
+		System.out.println(memberName + memberPhone + newPhone);
+	}
 	
 	
 	

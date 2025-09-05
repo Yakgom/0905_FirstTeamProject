@@ -1,5 +1,7 @@
 package com.kh.librarymember.controller;
 
+import com.kh.librarymember.model.dto.LibraryMemberDTO;
+import com.kh.librarymember.model.service.LibraryMemberService;
 import com.kh.librarymember.model.vo.LibraryMember;
 
 public class LibraryMemberController {
@@ -8,9 +10,21 @@ public class LibraryMemberController {
 		
 		LibraryMember lm = new LibraryMember(memberName, memberPhone);
 		
-		int result = new LibraryMember().memberInsert(lm);
+		int result = new LibraryMemberService().memberInsert(lm);
 		
 		return result;
+		
+	}
+	
+	
+	public int memberUpdate(String memberName, String memberPhone, String newPhone) {
+		
+		LibraryMemberDTO ldto = new LibraryMemberDTO(memberName, memberPhone, newPhone);
+		
+		int result = new LibraryMemberService().memberUpdate(ldto);
+		
+		return result;
+		
 		
 	}
 	
