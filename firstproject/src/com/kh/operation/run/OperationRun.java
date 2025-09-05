@@ -10,6 +10,7 @@ public class OperationRun {
 		
 		JDBCTemplate.registDriver();
 		new OperationView().mainMenu();
+		
 
 	}
 

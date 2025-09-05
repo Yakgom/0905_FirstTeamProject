@@ -6,6 +6,62 @@
 	<comment>
 	BOOK SQL
 	</comment>
+	
+	<entry key="insertBook">
+	INSERT
+  	  INTO
+           TB_BOOK
+    VALUES
+           (
+           SEQ_BOOK_NO.NEXTVAL
+         , ?
+         , ?
+         , (SELECT
+       		       GENRE_NO     
+              FROM     
+                   TB_BOOK_GENRE
+             WHERE
+                   GENRE_NAME = ?)
+         , 'N'
+         , SYSDATE
+           );
+	</entry>
+	
+	<entry key="deleteBook">
+	DELETE
+	  FROM
+	       TB_BOOK
+	 WHERE
+	       BOOK_NAME = ?
+	   AND
+	       AUTHOR = ?
+	</entry>
+	
+	<entry key="selectByBookName">
+	SELECT
+		   BOOK_NAME
+		 , AUTHOR
+		 , GENRE_NAME
+		 , BOOK_LOAN
+	  FROM
+	       TB_BOOK
+	  LEFT     
+	  JOIN
+	       TB_BOOK_GENRE ON (BOOK_CODE = GENRE_NO)
+	 WHERE
+	       BOOK_NAME = ?      
+	</entry>
+	
+	<entry key="updateBookName">
+	UPDATE
+	       TB_BOOK
+	   SET
+	       BOOK_NAME = ?
+	 WHERE
+	       BOOK_NAME = ?
+	   AND
+	       AUTHOR = ?
+	</entry>
 
    
 </properties>
